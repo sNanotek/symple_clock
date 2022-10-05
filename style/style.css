@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #624980;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock { 
+    background-color: rgb(33, 10, 54);
+    max-width: 500px;
+    height: 500px;
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+
+.clock .number {
+    --rotation: 0;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-weight: 500;
+    font-size: 20px;
+    color: yellow;
+    padding: 20px;
+}
+
+.clock .number.n1{
+    --rotation: 30deg;
+}
+
+.clock .number.n2 {
+    --rotation: 60deg;
+}
+
+.clock .number.n3 {
+    --rotation: 90deg;
+}
+
+.clock .number.n4 {
+   --rotation: 120deg;
+}
+
+.clock .number.n5 {
+    --rotation: 150deg;
+}
+
+.clock .number.n6 {
+    --rotation: 180deg;
+}
+
+.clock .number.n7 {
+    --rotation: 210deg;
+}
+
+.clock .number.n8 {
+    --rotation: 240deg;
+}
+
+.clock .number.n9 {
+    --rotation: 270deg;
+}
+
+.clock .number.n10 {
+    --rotation: 300deg;
+}
+
+.clock .number.n11 {
+    --rotation: 330deg;
+}
+
+.clock .number.n12 {
+    --rotation: 360deg;
+}
+
+.clock .pointer{
+    --rotation: 0deg;
+
+    position: absolute;
+    width: 3px;
+    height: 40%;
+    background-color: red;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) *1deg )); 
+    border-radius: 20%;
+}
+
+.clock::after {
+    content: ' ';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    z-index: 14;
+    background-color: black;
+    transform: translate(-50%, -50%);
+}
+
+.pointer.seconds {
+    width: 3px;
+    height: 40%;
+    background: red;
+}
+
+.pointer.minutes {
+    width: 5px;
+    height: 33%;
+    background: rgb(0, 0, 0);
+    z-index: 10;
+}
+
+.pointer.hours {
+    width: 7px;
+    height: 25%;
+    background-color: black;
+}
+
+@media screen and (max-width:460px){
+    .clock{
+        width: 90%;
+        height: 60%;
+    }
+}
